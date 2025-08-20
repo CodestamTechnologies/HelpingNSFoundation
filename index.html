@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALPING NS FOUNDATION</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #27ae60;
+            --dark-green: #145a32;
+            --nature-white: #f8f9fa;
+            --nature-black: #181818;
+            --accent: #e9f5ec;
+            --glass-bg: rgba(255,255,255,0.7);
+            --glass-blur: 12px;
+        }
+        body {
+            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+            background: #FFFFFB;
+            color: var(--nature-black);
+        }
+        /* Navbar Glassmorphism */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            box-shadow: 0 2px 16px rgba(20,90,50,0.10);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-green) !important;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: var(--nature-black) !important;
+            font-weight: 500;
+            margin-right: 1rem;
+            transition: color 0.2s;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+        /* Hero Section Modern */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(120deg, var(--primary-green) 60%, var(--accent) 100%);
+            color: var(--nature-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg-anim {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-section .container {
+            z-index: 2;
+        }
+        .hero-section h1 {
+            font-size: 3.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 24px rgba(20,90,50,0.13);
+        }
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-btn {
+            background: var(--nature-white);
+            color: var(--primary-green);
+            border: none;
+            font-weight: 600;
+            padding: 0.95rem 2.7rem;
+            border-radius: 30px;
+            font-size: 1.15rem;
+            box-shadow: 0 2px 12px rgba(20,90,50,0.10);
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+        }
+        .hero-btn:hover {
+            background: var(--dark-green);
+            color: var(--nature-white);
+            transform: scale(1.05);
+        }
+        .hero-cta {
+            margin-top: 2.5rem;
+            font-size: 1.1rem;
+            color: #e0ffe0;
+            letter-spacing: 1px;
+        }
+        /* Section Transitions */
+        .section-transition {
+            display: block;
+            width: 100%;
+            height: 60px;
+            margin-bottom: -1px;
+        }
+        /* About Section Modern */
+        .about-section {
+            padding: 7rem 0 4rem 0;
+            background: var(--nature-white);
+            position: relative;
+        }
+        .about-img {
+            border-radius: 22px;
+            box-shadow: 0 4px 32px rgba(44,204,64,0.13);
+            width: 100%;
+            max-width: 440px;
+        }
+        .about-content h2 {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+        .about-content ul {
+            margin-top: 1.5rem;
+            padding-left: 1.2rem;
+        }
+        .about-content ul li {
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+        }
+        .timeline {
+            border-left: 3px solid var(--primary-green);
+            margin: 2.5rem 0 2rem 1.5rem;
+            padding-left: 2rem;
+        }
+        .timeline-event {
+            margin-bottom: 1.7rem;
+            position: relative;
+        }
+        .timeline-event:before {
+            content: '';
+            position: absolute;
+            left: -2.1rem;
+            top: 0.3rem;
+            width: 18px;
+            height: 18px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            border: 3px solid var(--nature-white);
+            box-shadow: 0 2px 8px rgba(44,204,64,0.13);
+        }
+        .team-section {
+            margin-top: 3.5rem;
+        }
+        .team-card {
+            background: var(--accent);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(20,90,50,0.07);
+            padding: 1.5rem 1rem 1.2rem 1rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .team-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(20,90,50,0.13);
+        }
+        .team-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 0.7rem;
+            border: 3px solid var(--primary-green);
+        }
+        .team-card h6 {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+        .team-card p {
+            font-size: 0.98rem;
+            color: #333;
+        }
+        /* Motive Section Modern */
+        .motive-section {
+            background: linear-gradient(120deg, var(--accent) 60%, var(--primary-green) 100%);
+            padding: 7rem 0 4rem 0;
+            position: relative;
+        }
+        .motive-section h2 {
+            color: #FFFFFB;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .motive-card {
+            background: var(--nature-white);
+            border-radius: 20px;
+            box-shadow: 0 2px 16px rgba(20,90,50,0.10);
+            padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-height: 440px;
+            position: relative;
+        }
+        .motive-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 32px rgba(20,90,50,0.15);
+        }
+        .motive-card img {
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+        }
+        .motive-card h5 {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+        }
+        .motive-icon {
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            margin-bottom: 0.7rem;
+        }
+        /* Contribution Section Modern */
+        .contribution-section {
+            background: var(--dark-green);
+            color: var(--nature-white);
+            padding: 7rem 0 4rem 0;
+            position: relative;
+        }
+        .contribution-section h2 {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+        .bank-details {
+            background: rgba(255,255,255,0.10);
+            border-radius: 16px;
+            padding: 2.2rem 2rem 1.5rem 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .bank-details strong {
+            color: var(--primary-green);
+        }
+        .barcode {
+            background: var(--nature-white);
+            padding: 1.2rem;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1rem auto;
+            box-shadow: 0 2px 12px rgba(20,90,50,0.10);
+        }
+        .barcode img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .contribution-section .desc {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .impact-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .impact-stat {
+            background: rgba(255,255,255,0.13);
+            border-radius: 12px;
+            padding: 1.2rem 2rem;
+            text-align: center;
+            min-width: 180px;
+        }
+        .impact-stat h4 {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .impact-stat p {
+            margin-bottom: 0;
+            font-size: 1.05rem;
+        }
+        /* Contact Section Modern */
+        .contact-section {
+            background: var(--nature-white);
+            padding: 7rem 0 4rem 0;
+        }
+        .contact-section .card {
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(20,90,50,0.10);
+        }
+        .contact-section .form-control {
+            border-radius: 8px;
+        }
+        .contact-social {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .contact-social a {
+            color: var(--primary-green);
+            font-size: 1.7rem;
+            margin: 0 0.7rem;
+            transition: color 0.2s;
+        }
+        .contact-social a:hover {
+            color: var(--dark-green);
+        }
+        .map-embed {
+            border-radius: 14px;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: 0 2px 12px rgba(20,90,50,0.10);
+        }
+        /* Footer Modern */
+        .footer {
+            background: var(--nature-black);
+            color: var(--nature-white);
+            padding: 3rem 0 1.2rem 0;
+        }
+        .footer a {
+            color: var(--primary-green);
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-weight: 500;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+        }
+        .newsletter-form input {
+            border-radius: 8px;
+            border: none;
+            padding: 0.5rem 1rem;
+            flex: 1;
+        }
+        .newsletter-form button {
+            border-radius: 8px;
+            border: none;
+            background: var(--primary-green);
+            color: var(--nature-white);
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            transition: background 0.2s;
+        }
+        .newsletter-form button:hover {
+            background: var(--dark-green);
+        }
+        @media (max-width: 991px) {
+            .about-section, .motive-section, .contribution-section, .contact-section {
+                padding: 4rem 0 2rem 0;
+            }
+            .motive-card {
+                min-height: 350px;
+            }
+            .impact-stats {
+                gap: 1.2rem;
+            }
+        }
+    /* Animations */
+    .fade-in-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .card-animate {
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .card-animate:hover {
+        box-shadow: 0 8px 32px rgba(39,174,96,0.18), 0 2px 12px rgba(20,90,50,0.10);
+        transform: translateY(-8px) scale(1.03);
+        z-index: 2;
+    }
+    .hero-section .container > * {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: heroFadeInUp 1s cubic-bezier(.4,0,.2,1) forwards;
+    }
+    .hero-section .container > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-section .container > *:nth-child(2) { animation-delay: 0.3s; }
+    .hero-section .container > *:nth-child(3) { animation-delay: 0.5s; }
+    .hero-section .container > *:nth-child(4) { animation-delay: 0.7s; }
+    @keyframes heroFadeInUp {
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+<style>
+.why-card-extra-modern {
+    background: rgba(255,255,255,0.69);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    box-shadow: 0 3px 36px 0 rgba(44,204,64,0.10), 0 2px 8px rgba(39,174,96,0.07);
+    padding: 2.3rem 2rem 2rem 2rem;
+    margin: 0 auto 2.1rem auto;
+    max-width: 700px;
+    border: 1px solid #eaf5f1;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: box-shadow 0.33s cubic-bezier(.18,.71,.63,1.05), background 0.29s;
+    position: relative;
+    animation: whyContentCardAppear 0.4s cubic-bezier(.68,-0.3,.62,1.38);
+}
+@keyframes whyContentCardAppear {
+    0% { opacity: 0; transform: translateY(24px) scale(0.99); }
+    55% { opacity: 0.88; transform: translateY(-7px) scale(1.025); }
+    100% { opacity: 1; transform: translateY(0) scale(1.00); }
+}
+.why-card-extra-modern:hover {
+    box-shadow: 0 8px 42px 0 rgba(27,180,124,0.12), 0 4px 14px rgba(39,174,96,0.09);
+    background: rgba(255,255,255,0.80);
+}
+.why-extra-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1c8760;
+    letter-spacing: .5px;
+    margin-bottom: 1.07rem;
+    text-shadow: 0 .5px 0 #f7fcf9;
+}
+#why-cards-content-text p {
+    font-size: 1.09rem;
+    margin-bottom: 1.03rem;
+    color: #24462d;
+    text-shadow: 0px 1px 0px #fbfcfd;
+}
+#why-cards-content-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+#why-cards-content-text ul li {
+    position: relative;
+    padding-left: 1.65rem;
+    margin-bottom: 8px;
+    font-size: 1.04rem;
+    color: #267660;
+    font-weight: 500;
+    letter-spacing: .01em;
+}
+#why-cards-content-text ul li:before {
+    content: "";
+    display: inline-block;
+    height: 10px;
+    width:10px;
+    background: linear-gradient(135deg,#27ae60 65%,#e9f5ec 100%);
+    border-radius: 50%;
+    box-shadow: 0px 1px 5px #b1e6ce33;
+    margin-right: .55rem;
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+</style>
+<style>
+.timeline-modern-wrap {
+    max-width: 950px;
+    margin: 0 auto 2.5rem auto;
+    position: relative;
+    padding-top: 2.3rem;
+}
+.timeline-title-modern {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: .85px;
+    color: #19a47a;
+    margin-bottom: 1.8rem;
+}
+.timeline-stick-modern {
+    position: relative;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right:0;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.timeline-stick-modern:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    bottom: 7px;
+    width: 7px;
+    background: linear-gradient(180deg,#27ae60 67%,#e9f5ec 100%);
+    transform: translateX(-50%);
+    border-radius: 7px;
+    opacity: .22;
+}
+.timeline-event-modern {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 44px;
+    width: 100%;
+    position: relative;
+}
+.timeline-dot-modern {
+    background: #fff;
+    border: 4px solid #27ae60;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px 0 #b1e6ce2a;
+    z-index: 2;
+    flex-shrink: 0;
+    position: relative;
+    left: calc(50% - 22px);
+    top: 2px;
+}
+.timeline-dot-modern i {
+    color: #179a65;
+    font-size: 1.25rem;
+}
+.timeline-card-modern {
+background: rgba(255,255,255,0.93);
+border-radius: 16px;
+box-shadow: 0 1.5px 9px rgba(81,152,104,.14);
+padding: 30px 1.8rem 1rem 1.8rem;
+margin-left: 28px;
+margin-right: 28px;
+margin-top:0;
+text-align:left;
+min-width: 0;
+flex-grow: 1;
+border: 1.4px solid #e7f8ef;
+position: relative;
+top: -2px;
+}
+@media (max-width:700px){
+    .timeline-card-modern {padding:38px .85rem .85rem .89rem;}
+}
+.timeline-dot-modern-in-card {
+position:absolute;
+top:18px; right:18px;
+left:auto;
+box-shadow: 0 4px 18px 0 #b1e6ce2a;
+}
+.timeline-head-modern {
+    font-weight: 700;
+    color: #168a65;
+    font-size: 1.15rem;
+    margin-bottom:0.3rem;
+}
+.timeline-desc-modern {
+    color: #255046;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.7;
+}
+@media (max-width: 700px) {
+    .timeline-card-modern {padding: .89rem .85rem .85rem .89rem; font-size:.96em;}
+    .timeline-dot-modern {
+        width:30px; height:30px;font-size:.98em; border-width:3px; left:calc(50% - 15px);
+    }
+    .timeline-stick-modern:before {left: 15px; width: 5px;}
+}
+</style>
+
+</head>
+<body>
+    <script>
+    // Intersection Observer for fade-in-up
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new window.IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    });
+    </script>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">Healping Ns Foundation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contribute">Contribute</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Enhanced Split, Detailed, Functional -->
+    <section class="hero-section d-flex align-items-center" id="hero">
+        <canvas class="hero-bg-anim"></canvas>
+        <div class="container position-relative">
+            <div class="row align-items-center justify-content-between flex-lg-row flex-column-reverse">
+                <div class="col-lg-6 text-lg-start text-center mt-4 mt-lg-0">
+                    <h1 style="font-size:2.5rem;font-weight:700;letter-spacing:1px;text-shadow:0 2px 10px rgba(20,90,50,0.10);">Empowering Communities. Transforming Futures.</h1>
+                    <p style="font-size:1.3rem;margin-top:1.2rem;margin-bottom:2rem;max-width:500px;">
+                        Founded in 2020, our NGO empowers marginalized communities through education, health, child welfare, and livelihood development.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center mb-4">
+                        <a href="#contribute" class="hero-btn" style="font-weight:700;padding:1rem 2.5rem;font-size:1.15rem;text-decoration:none;"><i class="fa fa-heart me-2"></i>Donate Now</a>
+                        <a href="#contact" class="hero-btn hero-btn-outline" style="background:transparent;color:var(--nature-white);border:2px solid var(--nature-white);font-weight:700;padding:1rem 2.5rem;font-size:1.15rem;text-decoration:none;"> <i class="fa fa-users me-2"></i>Join as Volunteer</a>
+                    </div>
+                    <div class="hero-stats-flex-modern d-flex mb-4 justify-content-center align-items-stretch" style="gap:2.1rem;flex-wrap:nowrap;">
+                        <div class="hero-stat" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 8px rgba(20,90,50,0.08);">
+                            <h4 style="color:var(--nature-white);font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">2500+</h4>
+                            <p style="margin-bottom:0;font-size:1.05rem;color:#e0ffe0;">Indeviduals Reached</p>
+                        </div>
+                        <div class="hero-stat" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 8px rgba(20,90,50,0.08);">
+                            <h4 style="color:var(--nature-white);font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">2000+</h4>
+                            <p style="margin-bottom:0;font-size:1.05rem;color:#e0ffe0;">Students enrolled</p>
+                        </div>
+                        <div class="hero-stat" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 8px rgba(20,90,50,0.08);">
+                            <h4 style="color:var(--nature-white);font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">300+</h4>
+                            <p style="margin-bottom:0;font-size:1.05rem;color:#e0ffe0;">awarness camps</p>
+                        </div>
+                    </div>
+                    <div class="hero-cta mt-4">Scroll down to explore our journey <i class="fa fa-arrow-down"></i></div>
+                </div>
+                <style>
+                @media (min-width: 992px) {
+                .hero-section {
+                background:
+                linear-gradient(90deg, #27ae60 0%, #27ae60 50%, rgba(39,174,96,0.61) 78%, transparent 92%, transparent 100%),
+                url("images/larm-rmah-AEaTUnvneik-unsplash.jpg") right center/auto 100% no-repeat;
+                background-blend-mode: normal;
+                position: relative;
+                }
+                }
+                @media (max-width: 991px) {
+                    .hero-section {
+                        background: linear-gradient(120deg, #27ae60 60%, #e9f5ec 100%);
+                    }
+                }
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about" style="background: linear-gradient(120deg, #f5faf7 60%, #fff 100%); position: relative; margin-bottom:2.8rem;">
+        <div class="container">
+            <div class="row align-items-center gy-5 gx-lg-5 pb-4 flex-lg-row flex-column-reverse">
+                <div class="col-lg-7 about-content">
+                    <div style="margin-bottom:1.5rem;">
+                        <h2 class="section-title display-5" style="font-size:2.8rem;line-height:1.2;font-weight:900;letter-spacing:1.5px;color:#169d67;margin-bottom:.7rem;">
+                            <span style="background:#27ae60;-webkit-background-clip:text;-webkit-text-fill-color:transparent;">About Us</span>
+                        </h2>
+                        <div style="font-size:1.23rem;color:#252e23;font-weight:600;margin-bottom:1rem;line-height:1.65;">We are a passionate collective transforming lives for children, women, and marginalized communities since 2020 with an unwavering belief in dignity, access, and opportunity for all.</div>
+                        <div style="color:#2c5642;font-size:1.04rem;line-height:1.7;">Our NGO was founded by trained social workers committed to bringing positive change across rural and urban areas. We address critical issues including education, healthcare, child welfare, economic development, and emergency relief. Every initiative—be it a small training, a mass awareness drive, or a community shelter—embodies our relentless hope for an equitable, safe, and inclusive future.</div>
+                    </div>
+                    <div class="row gy-4 gx-3 mb-4 mt-1">
+                        <div class="col-12 col-sm-6">
+                            <div class="about-stat-glass">
+                                <div class="asgi"><i class="fa fa-heart"></i></div>
+                                <div class="asgt">care and protection</div>
+                                <div class="asgd">supported 250+ children</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="about-stat-glass">
+                                <div class="asgi"><i class="fa fa-users"></i></div>
+                                <div class="asgt">2500+ individuals</div>
+                                <div class="asgd">Reached through direct services</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="about-stat-glass">
+                                <div class="asgi"><i class="fa fa-tree"></i></div>
+                                <div class="asgt">100+ women and youth</div>
+                                <div class="asgd">Trained for income-generating skills</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="about-stat-glass">
+                                <div class="asgi"><i class="fa fa-graduation-cap"></i></div>
+                                <div class="asgt">2,000+ Children Educated</div>
+                                <div class="asgd">Enrolled in formal and informal learning</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-flex align-items-center justify-content-center position-relative">
+                    <div class="about-hero-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="About Us" class="about-hero-img">
+                        <div class="about-img-glass-card">
+                            <i class="fa fa-award"></i> Recognized by Global Nature Fund (2023)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+    .about-hero-img-wrap {
+        position: relative;
+        border-radius: 28px;
+        overflow: visible;
+        z-index: 1;
+    }
+    .about-hero-img {
+        border-radius: 26px;
+        box-shadow: 0 8px 40px 0 rgba(44,204,64,0.13), 0 1.5px 9px rgba(81,152,104,0.14);
+        max-width: 100%;
+        width: 345px;
+        min-height: 295px;
+        display: block;
+        border: 5px solid #eaf8f0;
+        background: #eaf8f0;
+    }
+    .about-img-glass-card {
+        position: absolute;
+        left: 50%;
+        bottom: -35px;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.85);
+        border-radius: 20px;
+        padding: 0.7rem 1.5rem 0.6rem 1.3rem;
+        font-weight: 700;
+        color: #189d67;
+        box-shadow: 0 3px 14px rgba(39,174,96,0.14);
+        font-size: 1.02rem;
+        letter-spacing: .10px;
+        border: 1.5px solid #e6f8ee;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        font-family: inherit;
+    }
+    .about-img-glass-card i {
+        color: #27ae60;
+        font-size: 1.1em;
+    }
+    .about-stat-glass {
+        background: rgba(255,255,255,0.79);
+        border-radius: 17px;
+        padding: 1.3rem 1rem .9rem 1rem;
+        margin-bottom: 2px;
+        box-shadow: 0 4px 20px rgba(44,204,64,0.11), 0 1.5px 8px rgba(81,152,104,0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        border: 1px solid #eaf8f0;
+        margin-bottom: 1.2rem;
+        min-width: 167px;
+        min-height: 104px;
+        position: relative;
+    }
+    .about-stat-glass .asgi {
+        font-size: 1.25rem;
+        color: #17b77a;
+        margin-bottom: .48rem;
+        background: #ecfaef;
+        display: inline-flex;
+        align-items:center;
+        justify-content:center;
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        box-shadow: 0 1.5px 9px rgba(81,152,104,0.13);
+    }
+    .about-stat-glass .asgt {
+        font-weight: 700;
+        color: #176b42;
+        font-size: 1.15rem;
+        margin-bottom: 0.13rem;
+    }
+    .about-stat-glass .asgd {
+        color: #34815a;
+        font-size: 0.95rem;
+        line-height: 1.28;
+        font-weight: 500;
+        letter-spacing: .03em;
+    }
+    @media (max-width:768px) {
+        .about-hero-img { width:100%; min-height:210px;}
+        .about-hero-img-wrap { margin-bottom:1.8rem;}
+        .about-img-glass-card{font-size:.97rem; padding:.44rem 1.05rem .38rem 1rem;}
+    }
+    </style>
+                        <!-- Our Mission and Vision Section -->
+            <div class="row justify-content-center mb-5" style="gap:2.7rem 2.7rem; margin-top:1rem; margin-bottom:2.8rem;">
+                <div class="col-md-5 col-12 mb-4 mb-md-0">
+                    <div class="why-card-extra-modern">
+                        <h5 class="why-extra-title" style="font-size:2.05rem;margin-bottom:1.05rem;">Our Mission</h5>
+                        <p style="font-size:1.10rem;color:#24462d;text-shadow:0px 1px 0px #fafdfe;margin-bottom:.7rem;">To empower underprivileged individuals and communities by providing access to essential services, promoting human rights, and building local capacity through sustainable, people-centered development.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-12 mb-4 mb-md-0">
+                    <div class="why-card-extra-modern">
+                        <h5 class="why-extra-title" style="font-size:2.05rem;margin-bottom:1.05rem;">Our Vision</h5>
+                        <p style="font-size:1.10rem;color:#24462d;text-shadow:0px 1px 0px #fafdfe;margin-bottom:.7rem;">A just and inclusive society where every individual can live with dignity, security, and equal opportunities.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Why Choose Us / Our Values -->
+            <div class="container"><div class="row mb-5" style="margin-top:2.3rem;">
+                <div class="col-12">
+                    <h3 class="text-center mb-4" style="color:#27ae60;font-weight:700;">Our Key Focus Areas</h3>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-book-open"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Education Support</div>
+                        <div style="font-size:0.98rem;color:#444;">Access to quality education for underprivileged children.</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-female"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Women Empowerment</div>
+                        <div style="font-size:0.98rem;color:#444;">Training and resources for stronger, independent women.</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-medkit"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Health and Hygiene</div>
+                        <div style="font-size:0.98rem;color:#444;">Promoting good health, sanitation, and awareness.</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-child"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Child Protection and Welfare</div>
+                        <div style="font-size:0.98rem;color:#444;">Safeguarding vulnerable children’s rights and wellbeing.</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-tools"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Livelihood and Skill Development</div>
+                        <div style="font-size:0.98rem;color:#444;">Vocational training for sustainable jobs and income.</div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-ambulance"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Disaster Relief and Emergency Support</div>
+                        <div style="font-size:0.98rem;color:#444;">Rapid help for communities in crisis and disasters.</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Extra Content Area (replaces timeline) -->
+            </div></div>
+            <div id="why-cards-extra-content" class="mb-5">
+                <div class="why-card-extra-modern">
+                    <div id="why-cards-content-text">
+                        <h5 class="why-extra-title">Education Support</h5>
+                        <p>We run several initiatives to support education for children and youth, especially those who are out of school or at risk of dropping out. These include:</p>
+                        <ul style="padding-left:1.2em;margin-bottom:0;">
+                            <li>Community learning centers in slums and remote villages</li>
+                            <li>After-school tutoring programs</li>
+                            <li>Digital literacy</li>
+                            <li>Parent sensitization sessions to encourage school enrollment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script>
+            // Card Extra Contents for Why Choose Section
+            const whyCardsData = [
+                {
+                    title: 'Education Support',
+                    content: `<p>We run several initiatives to support education for children and youth, especially those who are out of school or at risk of dropping out. These include:</p>
+                    <ul style="padding-left:1.2em;margin-bottom:0;">
+                        <li>Community learning centers in slums and remote villages</li>
+                        <li>After-school tutoring programs</li>
+                        <li>Digital literacy</li>
+                        <li>Parent sensitization sessions to encourage school enrollment</li>
+                    </ul>`
+                },
+                {
+                    title: 'Women Empowerment',
+                    content: `<p>We strongly advocate for women's rights and economic independence. Our NGO organizes:</p>
+                    <ul style="padding-left:1.2em;margin-bottom:0;">
+                        <li>Vocational training (tailoring, crafts, basic beauty courses)</li>
+                        <li>Legal aid and counseling for survivors of gender-based violence</li>
+                        <li>Health education and awareness drives focusing on reproductive rights and menstrual hygiene</li>
+                    </ul>`
+                },
+                {
+                    title: 'Health and Hygiene',
+                    content: `<p>Many communities lack access to basic healthcare. We organize:</p>
+                    <ul style="padding-left:1.2em;margin-bottom:0;">
+                        <li>Regular health camps in underserved areas</li>
+                        <li>Menstrual hygiene workshops for adolescent girls</li>
+                        <li>Nutrition awareness and support for mothers and children</li>
+                        <li>Distribution of hygiene kits, especially during public health emergencies</li>
+                    </ul>`
+                },
+                {
+                    title: 'Child Protection and Welfare',
+                    content: `<p>Children are at the center of our work. We ensure their safety and holistic development by:</p>
+                    <ul style="padding-left:1.2em;margin-bottom:0;">
+                        <li>Identifying and reporting child labor, abuse, and trafficking</li>
+                        <li>Providing safe shelter, education, and psychological support</li>
+                        <li>Running awareness campaigns on child rights</li>
+                    </ul>
+                    <p>Looking forward Collaborating with child welfare committees and government agencies</p>`
+                },
+                {
+                    title: 'Livelihood and Skill Development',
+                    content: `<p>Unemployment and poverty continue to plague many communities. We provide:</p>
+                    <ul style="padding-left:1.2em;margin-bottom:0;">
+                        <li>Skill development training for youth and women</li>
+                        <li>Career guidance</li>
+                        <li>Support for starting and guidance for some work home based enterprises</li>
+                    </ul>
+                    <p>These programs aim to improve income stability and economic resilience among marginalized families.</p>`
+                },
+                {
+                    title: 'Disaster Relief and Emergency Support',
+                    content: `<p>During times of crisis—such as floods, pandemics, or fires—we mobilize resources to provide immediate relief including</p>
+                    <ul style="padding-left:1.2em;margin-bottom:0;">
+                        <li>Food and ration kits</li>
+                        <li>Clothing, medicine, and sanitation materials</li>
+                        <li>First aid</li>
+                    </ul>`
+                },
+                {
+                    title: 'Community Empowerment',
+                    content: 'We focus on empowering communities by providing education, resources, and skills for self-sufficiency and resilience, making people active contributors to their own development.'
+                }
+            ];
+            // Attach click listeners to the cards
+            document.addEventListener('DOMContentLoaded', function() {
+                // Why Choose card columns
+                const cardEls = document.querySelectorAll('.row.mb-5 .col-md-2.col-6.mb-4');
+                cardEls.forEach((el, idx) => {
+                    el.style.cursor = 'pointer';
+                    el.addEventListener('click', function() {
+                        const data = whyCardsData[idx];
+                        const contentDiv = document.getElementById('why-cards-content-text');
+                        if (contentDiv) {
+                            contentDiv.innerHTML = `<h5 style=\"color:#27ae60;font-weight:700;\">${data.title}</h5><p>${data.content}</p>`;
+                        }
+                        cardEls.forEach(e=>e.classList.remove('why-c-active'));
+                        el.classList.add('why-c-active');
+                    });
+                });
+                // Set default active state
+                if(cardEls[0]) cardEls[0].classList.add('why-c-active');
+            });
+            </script>
+            <style>
+            .why-c-active {
+                /* border, gradient, and shadow removed */
+                color: #145a32;
+                transform: scale(1.07);
+                transition: all 0.28s cubic-bezier(.56,-0.19,.56,1.28);
+                position: relative;
+                z-index: 3;
+            }
+            .why-card {
+                background: #e9f5ec;
+                border-radius: 22px;
+                box-shadow: 0 6px 36px 0 rgba(44,204,64,0.13), 0 2px 10px rgba(39,174,96,0.07);
+                margin-bottom: 18px;
+                color: inherit;
+                transition: box-shadow 0.28s cubic-bezier(.56,-0.19,.56,1.28), transform 0.28s cubic-bezier(.56,-0.19,.56,1.28), background 0.25s;
+                min-height: 240px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            @media (min-width: 768px) {
+                .why-card {
+                    min-height: 280px;
+                }
+            }
+            .row.mb-5 {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: stretch !important;
+            }
+            .row.mb-5 .col-md-2.col-6.mb-4 {
+                /* Remove transition from column, card will animate instead */
+                overflow: visible;
+                position: relative;
+            }
+            .row.mb-5 .col-md-2.col-6.mb-4 > div {
+                transition: box-shadow 0.28s cubic-bezier(.56,-0.19,.56,1.28), transform 0.28s cubic-bezier(.56,-0.19,.56,1.28), background 0.25s;
+            }
+            .row.mb-5 .col-md-2.col-6.mb-4 > div:hover {
+                box-shadow: 0 6px 26px rgba(39,174,96,0.13);
+                /* background removed */
+                transform: translateY(-4px) scale(1.04);
+                border: 2.5px solid #145a32;
+            }
+            .why-card {
+                border: 2.5px solid transparent;
+            }
+            /* Animation for extra content area */
+            #why-cards-content-text {
+                opacity: 1;
+                transform: translateY(0);
+                transition: opacity 0.54s cubic-bezier(.48,0,.66,1.15), transform 0.54s cubic-bezier(.48,0,.66,1.15);
+            }
+            #why-cards-content-text.fade-out {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            #why-cards-content-text.fade-in {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            </style>
+            <!-- Team Showcase -->
+            <div class="container team-section-modern" id="team" style="margin-bottom:2.2rem;">
+                <h3 class="mb-2 text-center team-title-modern">Meet Our Team</h3>
+                <p class="team-desc-modern">
+                    The heart of our organization lies in our team of professional and grassroots social workers. Their deep understanding of local issues, empathy, and hands-on experience allows us to build strong community relationships. Our team includes educators, counselors, healthcare facilitators, legal advisors, and volunteers all working collaboratively to drive impact.<br>
+                    <span style="display:block; margin-top:11px; color:#179a65; font-weight:600;">As social workers, we emphasize ethical practice, community participation, and sustainable solutions. We listen first, act next.</span>
+                </p>
+                <div class="row justify-content-center g-4 team-row-modern mt-3">
+                        <div class="col-md-3 col-6 d-flex justify-content-center">
+                            <div class="team-modern-avatar-card">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Arjun Patel" class="team-modern-photo">
+                                <div class="team-modern-name">Arjun Patel</div>
+                                <div class="team-modern-role">Founder & CEO</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 d-flex justify-content-center">
+                            <div class="team-modern-avatar-card">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma" class="team-modern-photo">
+                                <div class="team-modern-name">Priya Sharma</div>
+                                <div class="team-modern-role">Director of Operations</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 d-flex justify-content-center">
+                            <div class="team-modern-avatar-card">
+                                <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="David Kim" class="team-modern-photo">
+                                <div class="team-modern-name">David Kim</div>
+                                <div class="team-modern-role">Head of Outreach</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 d-flex justify-content-center">
+                            <div class="team-modern-avatar-card">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maria Garcia" class="team-modern-photo">
+                                <div class="team-modern-name">Maria Garcia</div>
+                                <div class="team-modern-role">Lead Ecologist</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- Modern Timeline Impact Section -->
+            <div class="timeline-modern-wrap container mb-5">
+                <h3 class="timeline-title-modern text-center">Our Impact Over The Years</h3>
+                <div class="timeline-stick-modern">
+                    <div class="timeline-event-modern">
+                        <div class="timeline-card-modern">
+                            <div class="timeline-dot-modern timeline-dot-modern-in-card"><i class="fa fa-users"></i></div>
+                            <div class="timeline-head-modern">Direct Community Impact</div>
+                            <div class="timeline-desc-modern">Reached over 25,00+ individuals through direct services.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event-modern">
+                        <div class="timeline-card-modern">
+                            <div class="timeline-dot-modern timeline-dot-modern-in-card"><i class="fa fa-graduation-cap"></i></div>
+                            <div class="timeline-head-modern">Access to Education</div>
+                            <div class="timeline-desc-modern">Enrolled 2,000+ children into formal or non-formal education.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event-modern">
+                        <div class="timeline-card-modern">
+                            <div class="timeline-dot-modern timeline-dot-modern-in-card"><i class="fa fa-tools"></i></div>
+                            <div class="timeline-head-modern">Expanding Access to Education</div>
+                            <div class="timeline-desc-modern">Trained 100+ women and youth in income-generating skills</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event-modern">
+                        <div class="timeline-card-modern">
+                            <div class="timeline-dot-modern timeline-dot-modern-in-card"><i class="fa fa-hands-helping"></i></div>
+                            <div class="timeline-head-modern">Disaster Relief & Rapid Response</div>
+                            <div class="timeline-desc-modern">Conducted over 300 health awareness camps</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event-modern">
+                        <div class="timeline-card-modern">
+                            <div class="timeline-dot-modern timeline-dot-modern-in-card"><i class="fa fa-child"></i></div>
+                            <div class="timeline-head-modern">Child Protection & Anti-Trafficking</div>
+                            <div class="timeline-desc-modern">Supported 250+ children in need of care and protection</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="support-modern-wrap">
+    <div class="support-modern-card container">
+        <h3 class="support-title-modern text-center">How You Can Support Us</h3>
+        <p class="support-lead-modern">
+            You can help us expand our reach and deepen our impact by:
+        </p>
+        <ul class="support-list-modern">
+            <li><span class="support-list-icon"><i class="fa fa-hands-helping"></i></span>Volunteering your time and skills</li>
+            <li><span class="support-list-icon"><i class="fa fa-donate"></i></span>Donating towards our programs</li>
+            <li><span class="support-list-icon"><i class="fa fa-child"></i></span>Sponsoring a child's education or a woman's training course</li>
+            <li><span class="support-list-icon"><i class="fa fa-handshake"></i></span>Collaborating with us for CSR or community development initiatives</li>
+        </ul>
+        <div class="support-final-modern">
+            Every contribution helps us move closer to a more just and compassionate world.
+        </div>
+    </div>
+</section>
+<style>
+.support-modern-wrap {
+    background: rgba(255,255,255,0.79);
+    padding: 5.5rem 0 4rem 0;
+    margin-bottom:2.6rem;
+}
+.support-modern-card {
+    background: rgba(255,255,255,0.92);
+    border-radius: 26px;
+    box-shadow: 0 3px 28px 0 rgba(44,204,64,0.14), 0 2px 10px rgba(39,174,96,0.09);
+    padding: 2.6rem 2.1rem 2.1rem 2.1rem;
+    max-width: 740px;
+    margin: 0 auto;
+    border: 1.5px solid #d6f4e4;
+}
+.support-title-modern {
+    font-size: 2.15rem;
+    font-weight: 900;
+    color: #15925a;
+    letter-spacing: .5px;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 .5px 0 #e9f5ec;
+}
+.support-lead-modern {
+    color: #2c6256;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.support-list-modern {
+    list-style:none;
+    margin:0 0 1.8rem 0;
+    padding:0;
+    font-size: 1.18rem;
+    color: #177248;
+    font-weight: 500;
+    line-height: 1.7;
+}
+.support-list-modern li {
+    display:flex;
+    align-items:center;
+    gap:.9em;
+    margin-bottom:10px;
+    padding-left:0;
+}
+.support-list-icon {
+    width:2.1em; height:2.1em;
+    display:inline-flex;align-items:center;justify-content:center;background:#e7fbea;border-radius:50%;color:#179e6b;font-size:1.19em;box-shadow: 0 1.5px 8px #b1e6ce26;margin-right:.27em;
+}
+.support-final-modern {
+    background:rgba(255,255,255,0.79);
+    color:#178d55;
+    font-size:1.08rem;
+    font-weight:700;
+    border-radius:10px;
+    padding:.9rem 1.1rem .8rem 1.1rem;
+    text-align:center;
+    max-width: 520px;
+    margin:2.1rem auto 0 auto;
+    box-shadow:0 1px 6px #b1e6ce15;
+}
+@media (max-width:650px) {
+    .support-modern-card{padding:1.1rem .5rem 1.2rem .5rem;}
+}
+</style>
+            <style>
+            .team-section-modern {
+                max-width: 1100px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            /* .team-section-glass removed: section now has seamless bg */
+            .team-title-modern {
+                font-size: 2.3rem;
+                font-weight: 900;
+                color: #179b6b;
+                letter-spacing: .5px;
+                margin-bottom: 1.09rem;
+            }
+            .team-desc-modern {
+                color: #22604b;
+                font-size: 1.13rem;
+                max-width: 670px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1.7rem;
+                font-weight: 500;
+                line-height: 1.6;
+                text-align:center;
+            }
+            .team-row-modern {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .team-modern-avatar-card {
+                background: rgba(255,255,255,0.92);
+                backdrop-filter: blur(7px);
+                border-radius: 18px;
+                box-shadow: 0 4px 20px rgba(44,204,64,.09), 0 1px 8px rgba(81,152,104,0.09);
+                padding: 1.55rem 1rem .86rem 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: box-shadow 0.3s, transform 0.32s;
+                min-width: 155px;
+                max-width: 215px;
+            }
+            .team-modern-avatar-card:hover {
+                box-shadow: 0 8px 38px rgba(39,174,96,0.14), 0 2.5px 12px rgba(38,101,78,0.10);
+                transform: translateY(-4px) scale(1.055);
+            }
+            .team-modern-photo {
+                width: 95px;
+                height: 95px;
+                object-fit: cover;
+                border-radius: 27px;
+                border: 3px solid #27ae60;
+                margin-bottom: 1.1rem;
+                background: #eaf8f0;
+                box-shadow: 0 2.5px 12px rgba(64,191,116,0.07);
+                transition: box-shadow 0.2s;
+            }
+            .team-modern-name {
+                font-weight: 700;
+                font-size: 1.11rem;
+                color: #168a65;
+                margin-bottom: .22rem;
+            }
+            .team-modern-role {
+                font-size: 0.99rem;
+                color: #517c68;
+                font-weight: 500;
+                letter-spacing: 0.02em;
+            }
+            @media (max-width:768px) {
+                .team-section-modern {padding-left:10px; padding-right:10px;}
+                .team-section-glass {padding:1.25rem .4rem 1.3rem .4rem;}
+                .team-row-modern {gap:0;}
+                .team-modern-avatar-card { margin-bottom:18px;}
+            }
+            </style>
+        </div>
+    </section>
+
+    
+    <!-- Your Contribution Section -->
+    <section class="contribution-section" id="contribute" style="background: linear-gradient(120deg, #145a32 60%, #222 100%); color: #fff; position: relative;">
+        <div class="container">
+            <h2 class="text-center section-title" style="color:#27ae60;">Your Contribution</h2>
+            <p class="desc text-center mb-4" style="font-size:1.2rem;max-width:700px;margin:auto;">
+                Your support powers our mission. Every donation helps us plant more trees, educate more communities, and protect more wildlife.<br>
+                <span style="color:#e0ffe0;font-weight:600;">Choose your way to contribute and make a difference today!</span>
+            </p>
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-leaf"></i></div>
+                        <div style="font-weight:700;font-size:1.1rem;">Every ₹500</div>
+                        <div style="font-size:0.98rem;">Plants a tree</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-certificate"></i></div>
+                        <div style="font-weight:700;font-size:1.1rem;">Tax Benefits</div>
+                        <div style="font-size:0.98rem;">80G Exemption</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-hands-helping"></i></div>
+                        <div style="font-weight:700;font-size:1.1rem;">Transparent Impact</div>
+                        <div style="font-size:0.98rem;">90% funds to projects</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-stretch mb-5">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div style="background:rgba(255,255,255,0.13);border-radius:18px;padding:2.5rem 2rem 2rem 2rem;box-shadow:0 4px 24px rgba(39,174,96,0.13);height:100%;display:flex;flex-direction:column;justify-content:center;">
+                        <h5 class="mb-3" style="color:#27ae60;font-weight:700;"><i class="fa fa-university me-2"></i>Bank Transfer</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Account Name:</strong> HEALPING NS FOUNDATION</p>
+                                <p><strong>Account Number:</strong> 1234567890</p>
+                                <p><strong>Bank Name:</strong> Nature Bank</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>IFSC Code:</strong> NATB0000123</p>
+                                <p><strong>Branch:</strong> Main City Branch</p>
+                                <p class="mt-3"><em>All donations are tax-exempt under Section 80G.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-flex flex-column align-items-center justify-content-center">
+                    <div style="background:#fff;padding:1.5rem;border-radius:18px;box-shadow:0 2px 12px rgba(39,174,96,0.10);margin-bottom:1.2rem;display:flex;flex-direction:column;align-items:center;">
+                        <div style="font-size:1.5rem;color:#27ae60;font-weight:700;margin-bottom:0.5rem;"><i class="fa fa-qrcode me-2"></i>UPI / QR</div>
+                        <div class="barcode mb-2" style="background:#fff;box-shadow:none;padding:0;">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=greenearth@upi&pn=GreenEarthNGO" alt="QR Code for Payment">
+                        </div>
+                        <div style="font-size:1.05rem;color:#222;text-align:center;">Scan to donate instantly via UPI</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h4 class="text-center mb-4" style="color:#27ae60;font-weight:700;">How Your Donation Helps</h4>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-book-open"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Educate Marginalized Children</div>
+                        <div style="font-size:0.98rem;color:#e0ffe0;">Your gift sends underprivileged kids to school, covers fees and study materials.</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-female"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Empower Women & Youth</div>
+                        <div style="font-size:0.98rem;color:#e0ffe0;">Vocational, legal aid, and skill-building for sustainable futures.</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-child"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Protect Vulnerable Children</div>
+                        <div style="font-size:0.98rem;color:#e0ffe0;">Funds rescue, shelter, and ongoing support for at-risk children.</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
+                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-medkit"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem;">Health & Hygiene Drives</div>
+                        <div style="font-size:0.98rem;color:#e0ffe0;">Supports camps, menstrual hygiene and emergency medical relief.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact" style="background: linear-gradient(120deg, #e9f5ec 60%, #fff 100%); padding: 7rem 0 4rem 0;">
+        <div class="container">
+            <h2 class="section-title text-center" style="color: var(--primary-green); font-weight: 700;">Contact Us</h2>
+            <p class="text-center mb-5" style="font-size: 1.2rem; color: #333;">We'd love to hear from you! Reach out for collaborations, volunteering, or any questions.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-5 border-0 shadow-lg" style="border-radius: 22px; background: #fff;">
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <input type="text" class="form-control" placeholder="Your Name" required style="border-radius: 10px;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email" required style="border-radius: 10px;">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Phone" required style="border-radius: 10px;">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Address" required style="border-radius: 10px;">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Your Message" required style="border-radius: 10px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn hero-btn w-100" style="font-size: 1.15rem; border-radius: 10px; box-shadow: 0 2px 12px rgba(20,90,50,0.10);"><i class="fa fa-paper-plane me-2"></i>Send Message</button>
+                        </form>
+                        <div class="row mt-5 text-center text-md-start">
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <div style="font-size: 1.2rem; color: var(--primary-green);"><i class="fa fa-envelope me-2"></i><strong>Email</strong></div>
+                                <div style="color: #333;">ssindiafoundation1008@gmail.com</div>
+                            </div>
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <div style="font-size: 1.2rem; color: var(--primary-green);"><i class="fa fa-phone me-2"></i><strong>Phone</strong></div>
+                                <div style="color: #333;">+91 8001031008</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div style="font-size: 1.2rem; color: var(--primary-green);"><i class="fa fa-map-marker-alt me-2"></i><strong>Address</strong></div>
+                                <div style="color: #333;">HEALPING NS FOUNDATION, Lalpur , Ranchi , Jharkhand , India 834001</div>
+                            </div>
+                        </div>
+                        <div class="contact-social mt-4 text-center">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <div class="map-embed mt-4" style="border: 3px solid var(--primary-green); border-radius: 16px; overflow: hidden;">
+                            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=77.5946%2C12.9716%2C77.5946%2C12.9716&amp;layer=mapnik" style="width:100%;height:220px;border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Modern -->
+    <footer class="footer mt-5" style="background: #181818; color: #f8f9fa; border-top: 4px solid #27ae60; padding: 3.5rem 0 2rem 0;">
+        <div class="container">
+            <div class="row align-items-center mb-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 style="font-weight: 700; color: #27ae60; letter-spacing: 1px;">HEALPING NS FOUNDATION</h5>
+                    <p style="color: #e0ffe0;">© 2024 HEALPING NS FOUNDATION. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#hero" style="margin-right: 1.2rem;">Home</a>
+                    <a href="#about" style="margin-right: 1.2rem;">About</a>
+                    <a href="#team" style="margin-right: 1.2rem;">Team</a>
+                    <a href="#contribute" style="margin-right: 1.2rem;">Contribute</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="row align-items-center mt-4">
+                <div class="col-md-7 mb-3 mb-md-0">
+                    <form class="newsletter-form p-2 px-md-3" style="background: rgba(255,255,255,0.08); border-radius: 14px; box-shadow: 0 2px 12px rgba(20,90,50,0.10); display: flex; gap: 0.5rem; max-width: 420px;">
+                        <input type="email" placeholder="Subscribe to our newsletter" required style="border-radius: 8px; border: none; padding: 0.5rem 1rem; flex: 1; background: rgba(255,255,255,0.15); color: #222;">
+                        <button type="submit" style="border-radius: 8px; border: none; background: #27ae60; color: #fff; font-weight: 600; padding: 0.5rem 1.2rem; transition: background 0.2s;">Subscribe</button>
+                    </form>
+                </div>
+                <div class="col-md-5 text-md-end mt-3 mt-md-0">
+                    <!-- Uiverse.io Social Icons -->
+                    <ul class="wrapper" style="margin:0;">
+                        <li class="icon facebook">
+                            <span class="tooltip">Facebook</span>
+                            <svg viewBox="0 0 320 512" height="1.2em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                            </svg>
+                        </li>
+                        <li class="icon twitter">
+                            <span class="tooltip">Twitter</span>
+                            <svg height="1.8em" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="twitter">
+                                <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"/>
+                            </svg>
+                        </li>
+                        <li class="icon instagram">
+                            <span class="tooltip">Instagram</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </li>
+                    </ul>
+                    <style>
+                    /* From Uiverse.io by david-mohseni */
+                    .footer .wrapper {
+                        display: inline-flex;
+                        list-style: none;
+                        height: 120px;
+                        width: 100%;
+                        padding-top: 40px;
+                        font-family: "Poppins", sans-serif;
+                        justify-content: center;
+                        margin-bottom: 0;
+                    }
+                    .footer .icon {
+                        position: relative;
+                        background: #fff;
+                        border-radius: 50%;
+                        margin: 10px;
+                        width: 50px;
+                        height: 50px;
+                        font-size: 18px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+                        transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+                    .footer .icon svg {
+                        color: #27ae60;
+                        transition: color 0.2s;
+                    }
+                    .footer .tooltip {
+                        position: absolute;
+                        top: 0;
+                        font-size: 14px;
+                        background: #fff;
+                        color: #fff;
+                        padding: 5px 8px;
+                        border-radius: 5px;
+                        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+                    .footer .tooltip::before {
+                        position: absolute;
+                        content: "";
+                        height: 8px;
+                        width: 8px;
+                        background: #fff;
+                        bottom: -3px;
+                        left: 50%;
+                        transform: translate(-50%) rotate(45deg);
+                        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    }
+                    .footer .icon:hover .tooltip {
+                        top: -45px;
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                    }
+                    .footer .icon:hover span,
+                    .footer .icon:hover .tooltip {
+                        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+                    }
+                    .footer .facebook:hover,
+                    .footer .facebook:hover .tooltip,
+                    .footer .facebook:hover .tooltip::before,
+                    .footer .twitter:hover,
+                    .footer .twitter:hover .tooltip,
+                    .footer .twitter:hover .tooltip::before,
+                    .footer .instagram:hover,
+                    .footer .instagram:hover .tooltip,
+                    .footer .instagram:hover .tooltip::before {
+                        background: #27ae60;
+                        color: #fff;
+                    }
+                    .footer .icon:hover svg {
+                        color: #fff !important;
+                    }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar active link switching
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 80;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        // Hero animated background
+        const canvas = document.querySelector('.hero-bg-anim');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let w, h, circles;
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = document.querySelector('.hero-section').offsetHeight;
+            }
+            function draw() {
+                ctx.clearRect(0,0,w,h);
+                for (let c of circles) {
+                    ctx.beginPath();
+                    ctx.arc(c.x, c.y, c.r, 0, 2*Math.PI);
+                    ctx.fillStyle = c.color;
+                    ctx.globalAlpha = c.a;
+                    ctx.fill();
+                }
+                ctx.globalAlpha = 1;
+            }
+            function animate() {
+                for (let c of circles) {
+                    c.x += c.dx;
+                    c.y += c.dy;
+                    if (c.x < -c.r || c.x > w+c.r || c.y < -c.r || c.y > h+c.r) {
+                        c.x = Math.random()*w;
+                        c.y = Math.random()*h;
+                    }
+                }
+                draw();
+                requestAnimationFrame(animate);
+            }
+            function init() {
+                resize();
+                circles = [];
+                for (let i=0; i<18; i++) {
+                    circles.push({
+                        x: Math.random()*w,
+                        y: Math.random()*h,
+                        r: 40+Math.random()*40,
+                        dx: -0.2+Math.random()*0.4,
+                        dy: -0.2+Math.random()*0.4,
+                        color: i%2===0 ? '#27ae60' : '#e9f5ec',
+                        a: 0.08+Math.random()*0.08
+                    });
+                }
+                draw();
+            }
+            window.addEventListener('resize', resize);
+            init();
+            animate();
+        }
+    </script>
+</body>
+</html>
