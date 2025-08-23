@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEALPING NS FOUNDATION</title>
+    <title>HELPING NS FOUNDATION</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary-green: #27ae60;
+            --primary-green: #1e1f1f;
             --dark-green: #145a32;
             --nature-white: #f8f9fa;
             --nature-black: #181818;
@@ -24,29 +24,34 @@
         }
         /* Navbar Glassmorphism */
         .navbar {
-            background: var(--glass-bg);
+            background: #30323D;
             backdrop-filter: blur(var(--glass-blur));
             box-shadow: 0 2px 16px rgba(20,90,50,0.10);
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #30323D;
         }
         .navbar-brand {
             font-weight: 700;
-            color: var(--primary-green) !important;
+            color: #c9c9ff !important;
             letter-spacing: 1px;
         }
         .nav-link {
-            color: var(--nature-black) !important;
-            font-weight: 500;
-            margin-right: 1rem;
+            color: #b7d9ff;
+            font-weight: 600;
+            margin-right: 1.2rem;
+            font-size: 1.09rem;
+            letter-spacing: 0.02em;
             transition: color 0.2s;
         }
-        .nav-link.active, .nav-link:hover {
-            color: var(--primary-green) !important;
+        .nav-link.active,
+        .nav-link:hover {
+            color: #2c5aa0 !important;
+            background: none !important;
+            text-shadow: 0 1px 8px rgba(38,101,78,0.04);
         }
         /* Hero Section Modern */
-        .hero-section {
+       .hero-section {
             min-height: 100vh;
-            background: linear-gradient(120deg, var(--primary-green) 60%, var(--accent) 100%);
+            background: linear-gradient(120deg, #E8C547 60%, var(--accent) 100%);
             color: var(--nature-white);
             display: flex;
             align-items: center;
@@ -68,7 +73,7 @@
             font-size: 3.7rem;
             font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: 0 4px 24px rgba(20,90,50,0.13);
+            text-shadow: 0 4px 24px rgba(20, 71, 90, 0.13);
         }
         .hero-section p {
             font-size: 1.5rem;
@@ -80,7 +85,7 @@
         }
         .hero-btn {
             background: var(--nature-white);
-            color: var(--primary-green);
+            color: #252528;
             border: none;
             font-weight: 600;
             padding: 0.95rem 2.7rem;
@@ -97,7 +102,7 @@
         .hero-cta {
             margin-top: 2.5rem;
             font-size: 1.1rem;
-            color: #e0ffe0;
+            color: #1e1f1f;
             letter-spacing: 1px;
         }
         /* Section Transitions */
@@ -115,12 +120,12 @@
         }
         .about-img {
             border-radius: 22px;
-            box-shadow: 0 4px 32px rgba(44,204,64,0.13);
+            box-shadow: 0 4px 32px rgba(44, 143, 204, 0.13);
             width: 100%;
             max-width: 440px;
         }
         .about-content h2 {
-            color: var(--primary-green);
+            color: #252528;
             font-weight: 700;
         }
         .about-content ul {
@@ -132,7 +137,7 @@
             font-size: 1.1rem;
         }
         .timeline {
-            border-left: 3px solid var(--primary-green);
+            border-left: 3px solid #252528;
             margin: 2.5rem 0 2rem 1.5rem;
             padding-left: 2rem;
         }
@@ -147,10 +152,10 @@
             top: 0.3rem;
             width: 18px;
             height: 18px;
-            background: var(--primary-green);
+            background: #252528;
             border-radius: 50%;
             border: 3px solid var(--nature-white);
-            box-shadow: 0 2px 8px rgba(44,204,64,0.13);
+            box-shadow: 0 2px 8px rgba(44, 145, 204, 0.13);
         }
         .team-section {
             margin-top: 3.5rem;
@@ -158,7 +163,7 @@
         .team-card {
             background: var(--accent);
             border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(20,90,50,0.07);
+            box-shadow: 0 2px 12px rgba(20, 66, 90, 0.07);
             padding: 1.5rem 1rem 1.2rem 1rem;
             text-align: center;
             margin-bottom: 1.5rem;
@@ -166,7 +171,7 @@
         }
         .team-card:hover {
             transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 6px 24px rgba(20,90,50,0.13);
+            box-shadow: 0 6px 24px rgba(20, 67, 90, 0.13);
         }
         .team-card img {
             width: 80px;
@@ -174,11 +179,11 @@
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 0.7rem;
-            border: 3px solid var(--primary-green);
+            border: 3px solid #252528;
         }
         .team-card h6 {
             font-weight: 600;
-            color: var(--primary-green);
+            color: #252528;
         }
         .team-card p {
             font-size: 0.98rem;
@@ -186,7 +191,7 @@
         }
         /* Motive Section Modern */
         .motive-section {
-            background: linear-gradient(120deg, var(--accent) 60%, var(--primary-green) 100%);
+            background: linear-gradient(120deg, var(--accent) 60%, #252528 100%);
             padding: 7rem 0 4rem 0;
             position: relative;
         }
@@ -198,7 +203,7 @@
         .motive-card {
             background: var(--nature-white);
             border-radius: 20px;
-            box-shadow: 0 2px 16px rgba(20,90,50,0.10);
+            box-shadow: 0 2px 16px rgba(20, 69, 90, 0.1);
             padding: 2.2rem 1.5rem 1.5rem 1.5rem;
             margin-bottom: 2rem;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -207,7 +212,7 @@
         }
         .motive-card:hover {
             transform: translateY(-8px) scale(1.04);
-            box-shadow: 0 8px 32px rgba(20,90,50,0.15);
+            box-shadow: 0 8px 32px rgba(20, 47, 90, 0.15);
         }
         .motive-card img {
             height: 140px;
@@ -216,13 +221,13 @@
             margin-bottom: 1.2rem;
         }
         .motive-card h5 {
-            color: var(--primary-green);
+            color: #252528;
             font-weight: 600;
             margin-bottom: 0.7rem;
         }
         .motive-icon {
             font-size: 2.2rem;
-            color: var(--primary-green);
+            color: #252528;
             margin-bottom: 0.7rem;
         }
         /* Contribution Section Modern */
@@ -233,7 +238,7 @@
             position: relative;
         }
         .contribution-section h2 {
-            color: var(--primary-green);
+            color: #252528;
             font-weight: 700;
         }
         .bank-details {
@@ -244,7 +249,7 @@
             font-size: 1.1rem;
         }
         .bank-details strong {
-            color: var(--primary-green);
+            color: #252528;
         }
         .barcode {
             background: var(--nature-white);
@@ -282,7 +287,7 @@
             min-width: 180px;
         }
         .impact-stat h4 {
-            color: var(--primary-green);
+            color: #252528;
             font-weight: 700;
             margin-bottom: 0.3rem;
         }
@@ -297,29 +302,51 @@
         }
         .contact-section .card {
             border-radius: 18px;
-            box-shadow: 0 2px 16px rgba(20,90,50,0.10);
+            box-shadow: 0 2px 16px rgba(20, 63, 90, 0.1);
         }
         .contact-section .form-control {
             border-radius: 8px;
+            background: #f8f9fd;
+            border: 1.5px solid #d6e7f4;
+            color: #224460;
+            box-shadow: none;
+        }
+        .contact-section .form-control::placeholder {
+            color: #8891aa;
+            opacity: 1;
+        }
+        .contact-section form button[type="submit"] {
+            background: #2c5aa0;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 2px 12px rgba(20,90,50,0.10);
+            font-size: 1.12rem;
+            transition: background 0.23s;
+        }
+        .contact-section form button[type="submit"]:hover {
+            background: #17629b;
+            color: #fff;
         }
         .contact-social {
             margin-top: 2rem;
             text-align: center;
         }
         .contact-social a {
-            color: var(--primary-green);
+            color: #252528;
             font-size: 1.7rem;
             margin: 0 0.7rem;
             transition: color 0.2s;
         }
         .contact-social a:hover {
-            color: var(--dark-green);
+            color: blue;
         }
         .map-embed {
             border-radius: 14px;
             overflow: hidden;
             margin-top: 2rem;
-            box-shadow: 0 2px 12px rgba(20,90,50,0.10);
+            box-shadow: 0 2px 12px rgba(20, 51, 90, 0.1);
         }
         /* Footer Modern */
         .footer {
@@ -328,7 +355,7 @@
             padding: 3rem 0 1.2rem 0;
         }
         .footer a {
-            color: var(--primary-green);
+            color: #f8f9fa; /* much lighter for good contrast */
             text-decoration: none;
             margin-right: 1.5rem;
             font-weight: 500;
@@ -343,21 +370,28 @@
         }
         .newsletter-form input {
             border-radius: 8px;
-            border: none;
+            background: #f8f9fd;
+            border: 1.5px solid #d6e7f4;
+            color: #224460;
             padding: 0.5rem 1rem;
             flex: 1;
+            box-shadow: none;
+        }
+        .newsletter-form input::placeholder {
+            color: #8891aa;
+            opacity: 1;
         }
         .newsletter-form button {
             border-radius: 8px;
-            border: none;
-            background: var(--primary-green);
-            color: var(--nature-white);
+            background: #2c5aa0;
+            color: #fff;
             font-weight: 600;
             padding: 0.5rem 1.2rem;
-            transition: background 0.2s;
+            border: none;
+            transition: background 0.23s;
         }
         .newsletter-form button:hover {
-            background: var(--dark-green);
+            background: #17629b;
         }
         @media (max-width: 991px) {
             .about-section, .motive-section, .contribution-section, .contact-section {
@@ -384,7 +418,7 @@
         transition: box-shadow 0.3s, transform 0.3s;
     }
     .card-animate:hover {
-        box-shadow: 0 8px 32px rgba(39,174,96,0.18), 0 2px 12px rgba(20,90,50,0.10);
+        box-shadow: 0 8px 32px rgba(39, 115, 174, 0.18), 0 2px 12px rgba(20, 62, 90, 0.1);
         transform: translateY(-8px) scale(1.03);
         z-index: 2;
     }
@@ -410,7 +444,7 @@
     padding: 2.3rem 2rem 2rem 2rem;
     margin: 0 auto 2.1rem auto;
     max-width: 700px;
-    border: 1px solid #eaf5f1;
+    border: 1px solid #eaf0f5;
     min-height: 260px;
     display: flex;
     flex-direction: column;
@@ -425,21 +459,21 @@
     100% { opacity: 1; transform: translateY(0) scale(1.00); }
 }
 .why-card-extra-modern:hover {
-    box-shadow: 0 8px 42px 0 rgba(27,180,124,0.12), 0 4px 14px rgba(39,174,96,0.09);
+    box-shadow: 0 8px 42px 0 rgba(27, 162, 180, 0.12), 0 4px 14px rgba(39, 120, 174, 0.09);
     background: rgba(255,255,255,0.80);
 }
 .why-extra-title {
     font-size: 1.8rem;
     font-weight: 800;
-    color: #1c8760;
+    color: #1c5c87;
     letter-spacing: .5px;
     margin-bottom: 1.07rem;
-    text-shadow: 0 .5px 0 #f7fcf9;
+    text-shadow: 0 .5px 0 #f7fafc;
 }
 #why-cards-content-text p {
     font-size: 1.09rem;
     margin-bottom: 1.03rem;
-    color: #24462d;
+    color: #243146;
     text-shadow: 0px 1px 0px #fbfcfd;
 }
 #why-cards-content-text ul {
@@ -452,7 +486,7 @@
     padding-left: 1.65rem;
     margin-bottom: 8px;
     font-size: 1.04rem;
-    color: #267660;
+    color: #264e76;
     font-weight: 500;
     letter-spacing: .01em;
 }
@@ -461,9 +495,9 @@
     display: inline-block;
     height: 10px;
     width:10px;
-    background: linear-gradient(135deg,#27ae60 65%,#e9f5ec 100%);
+    background: linear-gradient(135deg,#1e1f1f 65%,#e9f2f5 100%);
     border-radius: 50%;
-    box-shadow: 0px 1px 5px #b1e6ce33;
+    box-shadow: 0px 1px 5px #b1cae633;
     margin-right: .55rem;
     position: absolute;
     top: 6px;
@@ -481,7 +515,7 @@
     font-size: 2rem;
     font-weight: 900;
     letter-spacing: .85px;
-    color: #19a47a;
+    color: #194aa4;
     margin-bottom: 1.8rem;
 }
 .timeline-stick-modern {
@@ -501,7 +535,7 @@
     top: 7px;
     bottom: 7px;
     width: 7px;
-    background: linear-gradient(180deg,#27ae60 67%,#e9f5ec 100%);
+    background: linear-gradient(180deg,#1e1f1f 67%,#e9f2f5 100%);
     transform: translateX(-50%);
     border-radius: 7px;
     opacity: .22;
@@ -515,7 +549,7 @@
 }
 .timeline-dot-modern {
     background: #fff;
-    border: 4px solid #27ae60;
+    border: 4px solid #457aff;
     border-radius: 50%;
     width: 44px;
     height: 44px;
@@ -530,7 +564,7 @@
     top: 2px;
 }
 .timeline-dot-modern i {
-    color: #179a65;
+    color: #5a81ff;
     font-size: 1.25rem;
 }
 .timeline-card-modern {
@@ -559,12 +593,12 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
 }
 .timeline-head-modern {
     font-weight: 700;
-    color: #168a65;
+    color: #16568a;
     font-size: 1.15rem;
     margin-bottom:0.3rem;
 }
 .timeline-desc-modern {
-    color: #255046;
+    color: #253950;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.7;
@@ -578,9 +612,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
 }
 </style>
 
-</head>
-<body>
-    <script>
+</head<body    <script>
     // Intersection Observer for fade-in-up
     document.addEventListener('DOMContentLoaded', function() {
         const observer = new window.IntersectionObserver((entries) => {
@@ -619,26 +651,26 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
         <div class="container position-relative">
             <div class="row align-items-center justify-content-between flex-lg-row flex-column-reverse">
                 <div class="col-lg-6 text-lg-start text-center mt-4 mt-lg-0">
-                    <h1 style="font-size:2.5rem;font-weight:700;letter-spacing:1px;text-shadow:0 2px 10px rgba(20,90,50,0.10);">Empowering Communities. Transforming Futures.</h1>
+                    <h1 style="font-size:2.5rem;font-weight:700;letter-spacing:1px;text-shadow:0 2px 10px rgba(20, 49, 90, 0.1);">Empowering Communities. Transforming Futures.</h1>
                     <p style="font-size:1.3rem;margin-top:1.2rem;margin-bottom:2rem;max-width:500px;">
                         Founded in 2020, our NGO empowers marginalized communities through education, health, child welfare, and livelihood development.
                     </p>
                     <div class="d-flex flex-wrap gap-3 justify-content-lg-start justify-content-center mb-4">
-                        <a href="#contribute" class="hero-btn" style="font-weight:700;padding:1rem 2.5rem;font-size:1.15rem;text-decoration:none;"><i class="fa fa-heart me-2"></i>Donate Now</a>
-                        <a href="#contact" class="hero-btn hero-btn-outline" style="background:transparent;color:var(--nature-white);border:2px solid var(--nature-white);font-weight:700;padding:1rem 2.5rem;font-size:1.15rem;text-decoration:none;"> <i class="fa fa-users me-2"></i>Join as Volunteer</a>
+                        <a href="#contribute" class="hero-btn" style="background:#2c5aa0;color:#fff;border:none;font-weight:700;padding:1rem 2.5rem;font-size:1.15rem;text-decoration:none;border-radius:30px;box-shadow:0 2px 12px rgba(20,90,50,0.10);transition:background 0.23s;"> <i class="fa fa-heart me-2"></i>Donate Now</a>
+                        <a href="#contact" class="hero-btn" style="background:transparent;color:#fff;border:2px solid #2c5aa0;font-weight:700;padding:1rem 2.5rem;font-size:1.15rem;text-decoration:none;border-radius:30px;box-shadow:0 2px 12px rgba(20,90,50,0.10);transition:background 0.23s;"> <i class="fa fa-users me-2"></i>Join as Volunteer</a>
                     </div>
                     <div class="hero-stats-flex-modern d-flex mb-4 justify-content-center align-items-stretch" style="gap:2.1rem;flex-wrap:nowrap;">
-                        <div class="hero-stat" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 8px rgba(20,90,50,0.08);">
-                            <h4 style="color:var(--nature-white);font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">2500+</h4>
-                            <p style="margin-bottom:0;font-size:1.05rem;color:#e0ffe0;">Indeviduals Reached</p>
+                        <div class="hero-stat" style="background:#f8f9fd;border-radius:14px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;">
+                            <h4 style="color:#2c5aa0;font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">2500+</h4>
+                            <p style="margin-bottom:0;font-size:1.05rem;color:#224460;">Indeviduals Reached</p>
                         </div>
-                        <div class="hero-stat" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 8px rgba(20,90,50,0.08);">
-                            <h4 style="color:var(--nature-white);font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">2000+</h4>
-                            <p style="margin-bottom:0;font-size:1.05rem;color:#e0ffe0;">Students enrolled</p>
+                        <div class="hero-stat" style="background:#f8f9fd;border-radius:14px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;">
+                            <h4 style="color:#2c5aa0;font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">2000+</h4>
+                            <p style="margin-bottom:0;font-size:1.05rem;color:#224460;">Students enrolled</p>
                         </div>
-                        <div class="hero-stat" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 8px rgba(20,90,50,0.08);">
-                            <h4 style="color:var(--nature-white);font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">300+</h4>
-                            <p style="margin-bottom:0;font-size:1.05rem;color:#e0ffe0;">awarness camps</p>
+                        <div class="hero-stat" style="background:#f8f9fd;border-radius:14px;padding:1.1rem 1.7rem;min-width:140px;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;">
+                            <h4 style="color:#2c5aa0;font-weight:700;margin-bottom:0.2rem;font-size:1.5rem;">300+</h4>
+                            <p style="margin-bottom:0;font-size:1.05rem;color:#224460;">awarness camps</p>
                         </div>
                     </div>
                     <div class="hero-cta mt-4">Scroll down to explore our journey <i class="fa fa-arrow-down"></i></div>
@@ -647,7 +679,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 @media (min-width: 992px) {
                 .hero-section {
                 background:
-                linear-gradient(90deg, #27ae60 0%, #27ae60 50%, rgba(39,174,96,0.61) 78%, transparent 92%, transparent 100%),
+                linear-gradient(90deg, #4782e8 0%, #7a97d1 30%, rgba(39, 151, 174, 0.61) 78%, transparent 92%, transparent 100%),
                 url("images/larm-rmah-AEaTUnvneik-unsplash.jpg") right center/auto 100% no-repeat;
                 background-blend-mode: normal;
                 position: relative;
@@ -655,7 +687,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 }
                 @media (max-width: 991px) {
                     .hero-section {
-                        background: linear-gradient(120deg, #27ae60 60%, #e9f5ec 100%);
+                        background: linear-gradient(90deg, #E8C547 0%, #d1be7a 30%, rgba(174, 163, 39, 0.61) 78%, transparent 92%, transparent 100%),
                     }
                 }
                 </style>
@@ -664,13 +696,13 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
     </section>
 
     <!-- About Us Section -->
-    <section class="about-section" id="about" style="background: linear-gradient(120deg, #f5faf7 60%, #fff 100%); position: relative; margin-bottom:2.8rem;">
+    <section class="about-section" id="about" style="background: #f0f8ff; position: relative; margin-bottom:2.8rem;">
         <div class="container">
             <div class="row align-items-center gy-5 gx-lg-5 pb-4 flex-lg-row flex-column-reverse">
                 <div class="col-lg-7 about-content">
                     <div style="margin-bottom:1.5rem;">
-                        <h2 class="section-title display-5" style="font-size:2.8rem;line-height:1.2;font-weight:900;letter-spacing:1.5px;color:#169d67;margin-bottom:.7rem;">
-                            <span style="background:#27ae60;-webkit-background-clip:text;-webkit-text-fill-color:transparent;">About Us</span>
+                        <h2 class="section-title display-5" style="font-size:2.8rem;line-height:1.2;font-weight:900;letter-spacing:1.5px;color:#2c5aa0;margin-bottom:.7rem;">
+                            About Us
                         </h2>
                         <div style="font-size:1.23rem;color:#252e23;font-weight:600;margin-bottom:1rem;line-height:1.65;">We are a passionate collective transforming lives for children, women, and marginalized communities since 2020 with an unwavering belief in dignity, access, and opportunity for all.</div>
                         <div style="color:#2c5642;font-size:1.04rem;line-height:1.7;">Our NGO was founded by trained social workers committed to bringing positive change across rural and urban areas. We address critical issues including education, healthcare, child welfare, economic development, and emergency relief. Every initiative—be it a small training, a mass awareness drive, or a community shelter—embodies our relentless hope for an equitable, safe, and inclusive future.</div>
@@ -709,10 +741,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 <div class="col-lg-5 d-flex align-items-center justify-content-center position-relative">
                     <div class="about-hero-img-wrap">
                         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="About Us" class="about-hero-img">
-                        <div class="about-img-glass-card">
-                            <i class="fa fa-award"></i> Recognized by Global Nature Fund (2023)
-                        </div>
-                    </div>
+                                            </div>
                 </div>
             </div>
         </div>
@@ -745,7 +774,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
         border-radius: 20px;
         padding: 0.7rem 1.5rem 0.6rem 1.3rem;
         font-weight: 700;
-        color: #189d67;
+        color: #18719d;
         box-shadow: 0 3px 14px rgba(39,174,96,0.14);
         font-size: 1.02rem;
         letter-spacing: .10px;
@@ -757,7 +786,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
         font-family: inherit;
     }
     .about-img-glass-card i {
-        color: #27ae60;
+        color: #1e1f1f;
         font-size: 1.1em;
     }
     .about-stat-glass {
@@ -778,25 +807,25 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
     }
     .about-stat-glass .asgi {
         font-size: 1.25rem;
-        color: #17b77a;
+        color: #2c5aa0;
         margin-bottom: .48rem;
-        background: #ecfaef;
+        background: #e6f2ff;
         display: inline-flex;
         align-items:center;
         justify-content:center;
         width: 37px;
         height: 37px;
         border-radius: 50%;
-        box-shadow: 0 1.5px 9px rgba(81,152,104,0.13);
+        box-shadow: 0 1.5px 9px rgba(44,90,160,0.13);
     }
     .about-stat-glass .asgt {
         font-weight: 700;
-        color: #176b42;
+        color: #1e4a8c;
         font-size: 1.15rem;
         margin-bottom: 0.13rem;
     }
     .about-stat-glass .asgd {
-        color: #34815a;
+        color: #2c5aa0;
         font-size: 0.95rem;
         line-height: 1.28;
         font-weight: 500;
@@ -813,59 +842,59 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 <div class="col-md-5 col-12 mb-4 mb-md-0">
                     <div class="why-card-extra-modern">
                         <h5 class="why-extra-title" style="font-size:2.05rem;margin-bottom:1.05rem;">Our Mission</h5>
-                        <p style="font-size:1.10rem;color:#24462d;text-shadow:0px 1px 0px #fafdfe;margin-bottom:.7rem;">To empower underprivileged individuals and communities by providing access to essential services, promoting human rights, and building local capacity through sustainable, people-centered development.</p>
+                        <p style="font-size:1.10rem;color:#243c46;text-shadow:0px 1px 0px #fafdfe;margin-bottom:.7rem;">To empower underprivileged individuals and communities by providing access to essential services, promoting human rights, and building local capacity through sustainable, people-centered development.</p>
                     </div>
                 </div>
                 <div class="col-md-5 col-12 mb-4 mb-md-0">
                     <div class="why-card-extra-modern">
                         <h5 class="why-extra-title" style="font-size:2.05rem;margin-bottom:1.05rem;">Our Vision</h5>
-                        <p style="font-size:1.10rem;color:#24462d;text-shadow:0px 1px 0px #fafdfe;margin-bottom:.7rem;">A just and inclusive society where every individual can live with dignity, security, and equal opportunities.</p>
+                        <p style="font-size:1.10rem;color:#243c46;text-shadow:0px 1px 0px #fafdfe;margin-bottom:.7rem;">A just and inclusive society where every individual can live with dignity, security, and equal opportunities.</p>
                     </div>
                 </div>
             </div>
             <!-- Why Choose Us / Our Values -->
             <div class="container"><div class="row mb-5" style="margin-top:2.3rem;">
                 <div class="col-12">
-                    <h3 class="text-center mb-4" style="color:#27ae60;font-weight:700;">Our Key Focus Areas</h3>
+                    <h3 class="text-center mb-4" style="color:#1e1f1f;font-weight:700;">Our Key Focus Areas</h3>
                 </div>
                 <div class="col-md-2 col-6 mb-4">
                     <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-book-open"></i></div>
+                        <div style="font-size:2rem;color:#5597fb;"><i class="fa fa-book-open"></i></div>
                         <div style="font-weight:600;margin-top:0.7rem;">Education Support</div>
                         <div style="font-size:0.98rem;color:#444;">Access to quality education for underprivileged children.</div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6 mb-4">
                     <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-female"></i></div>
+                        <div style="font-size:2rem;color:#5597fb;"><i class="fa fa-female"></i></div>
                         <div style="font-weight:600;margin-top:0.7rem;">Women Empowerment</div>
                         <div style="font-size:0.98rem;color:#444;">Training and resources for stronger, independent women.</div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6 mb-4">
                     <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-medkit"></i></div>
+                        <div style="font-size:2rem;color:#5597fb;"><i class="fa fa-medkit"></i></div>
                         <div style="font-weight:600;margin-top:0.7rem;">Health and Hygiene</div>
                         <div style="font-size:0.98rem;color:#444;">Promoting good health, sanitation, and awareness.</div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6 mb-4">
                     <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-child"></i></div>
+                        <div style="font-size:2rem;color:#5597fb;"><i class="fa fa-child"></i></div>
                         <div style="font-weight:600;margin-top:0.7rem;">Child Protection and Welfare</div>
                         <div style="font-size:0.98rem;color:#444;">Safeguarding vulnerable children’s rights and wellbeing.</div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6 mb-4">
                     <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-tools"></i></div>
+                        <div style="font-size:2rem;color:#5597fb;"><i class="fa fa-tools"></i></div>
                         <div style="font-weight:600;margin-top:0.7rem;">Livelihood and Skill Development</div>
                         <div style="font-size:0.98rem;color:#444;">Vocational training for sustainable jobs and income.</div>
                     </div>
                 </div>
                 <div class="col-md-2 col-6 mb-4">
                     <div class="why-card" style="padding:1.5rem 1rem;text-align:center;">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-ambulance"></i></div>
+                        <div style="font-size:2rem;color:#5597fb;"><i class="fa fa-ambulance"></i></div>
                         <div style="font-weight:600;margin-top:0.7rem;">Disaster Relief and Emergency Support</div>
                         <div style="font-size:0.98rem;color:#444;">Rapid help for communities in crisis and disasters.</div>
                     </div>
@@ -963,7 +992,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                         const data = whyCardsData[idx];
                         const contentDiv = document.getElementById('why-cards-content-text');
                         if (contentDiv) {
-                            contentDiv.innerHTML = `<h5 style=\"color:#27ae60;font-weight:700;\">${data.title}</h5><p>${data.content}</p>`;
+                            contentDiv.innerHTML = `<h5 style=\"color:#1e1f1f;font-weight:700;\">${data.title}</h5><p>${data.content}</p>`;
                         }
                         cardEls.forEach(e=>e.classList.remove('why-c-active'));
                         el.classList.add('why-c-active');
@@ -976,16 +1005,16 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
             <style>
             .why-c-active {
                 /* border, gradient, and shadow removed */
-                color: #145a32;
+                color: #142b5a;
                 transform: scale(1.07);
                 transition: all 0.28s cubic-bezier(.56,-0.19,.56,1.28);
                 position: relative;
                 z-index: 3;
             }
             .why-card {
-                background: #e9f5ec;
+                background: #e9f3f5;
                 border-radius: 22px;
-                box-shadow: 0 6px 36px 0 rgba(44,204,64,0.13), 0 2px 10px rgba(39,174,96,0.07);
+                box-shadow: 0 6px 36px 0 rgba(44, 161, 204, 0.13), 0 2px 10px rgba(39,174,96,0.07);
                 margin-bottom: 18px;
                 color: inherit;
                 transition: box-shadow 0.28s cubic-bezier(.56,-0.19,.56,1.28), transform 0.28s cubic-bezier(.56,-0.19,.56,1.28), background 0.25s;
@@ -1016,7 +1045,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 box-shadow: 0 6px 26px rgba(39,174,96,0.13);
                 /* background removed */
                 transform: translateY(-4px) scale(1.04);
-                border: 2.5px solid #145a32;
+                border: 2.5px solid #14215a;
             }
             .why-card {
                 border: 2.5px solid transparent;
@@ -1040,36 +1069,35 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
             <div class="container team-section-modern" id="team" style="margin-bottom:2.2rem;">
                 <h3 class="mb-2 text-center team-title-modern">Meet Our Team</h3>
                 <p class="team-desc-modern">
-                    The heart of our organization lies in our team of professional and grassroots social workers. Their deep understanding of local issues, empathy, and hands-on experience allows us to build strong community relationships. Our team includes educators, counselors, healthcare facilitators, legal advisors, and volunteers all working collaboratively to drive impact.<br>
-                    <span style="display:block; margin-top:11px; color:#179a65; font-weight:600;">As social workers, we emphasize ethical practice, community participation, and sustainable solutions. We listen first, act next.</span>
+                    The heart of our organization lies in our team of professional and grassroots social workers. Their deep understanding of local issues, empathy, and hands-on experience allows us to build strong community relationships. Our team includes educators, counselors, healthcare facilitators, legal advisors, and volunteers all working collaboratively to drive impact.<br<span style="display:block; margin-top:11px; color:#173e9a; font-weight:600;">As social workers, we emphasize ethical practice, community participation, and sustainable solutions. We listen first, act next.</span>
                 </p>
                 <div class="row justify-content-center g-4 team-row-modern mt-3">
                             <div class="col-md-3 col-6 d-flex justify-content-center">
                                 <div class="team-modern-avatar-card">
-                                    <img src="images/team/Ms.Aaruni singh.jpeg" alt="Ms. Aaruni Singh" class="team-modern-photo">
-                                    <div class="team-modern-name">Ms. Aaruni Singh</div>
-                                    <span class="badge bg-success mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Head</span>
+                                    <img src="images/team/Shataxi Jaiswal.jpeg" alt="Ms. Shataxi Uma Jaiswal" class="team-modern-photo" style="object-fit:cover;object-position:top;">
+                                    <div class="team-modern-name">Ms. Shataxi Uma Jaiswal</div>
+                                    <span class="badge bg-primary mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Director</span>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6 d-flex justify-content-center">
                                 <div class="team-modern-avatar-card">
-                                    <img src="images/team/Shubhodeep.jpeg" alt="Shubhodeep" class="team-modern-photo">
-                                    <div class="team-modern-name">Shubhodeep</div>
-                                    <span class="badge bg-secondary mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Member</span>
+                                    <img src="images/team/Shubhodeep.jpeg" alt="Mr. Shubhodeep Choudhury" class="team-modern-photo">
+                                    <div class="team-modern-name">Mr. Shubhodeep Choudhury</div>
+                                    <span class="badge bg-info mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Vice President</span>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6 d-flex justify-content-center">
                                 <div class="team-modern-avatar-card">
-                                    <img src="images/team/Shataxi Jaiswal.jpeg" alt="Shataxi Jaiswal" class="team-modern-photo" style="object-fit:cover;object-position:top;">
-                                    <div class="team-modern-name">Shataxi Jaiswal</div>
-                                    <span class="badge bg-secondary mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Member</span>
+                                    <img src="images/team/Abhishek.jpeg" alt="Mr. Abhishek Bhardwaj" class="team-modern-photo">
+                                    <div class="team-modern-name">Mr. Abhishek Bhardwaj</div>
+                                    <span class="badge bg-warning mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Secretary</span>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6 d-flex justify-content-center">
                                 <div class="team-modern-avatar-card">
-                                    <img src="images/team/Abhishek.jpeg" alt="Abhishek" class="team-modern-photo">
-                                    <div class="team-modern-name">Abhishek</div>
-                                    <span class="badge bg-secondary mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Member</span>
+                                    <img src="images/team/Ms.Aaruni singh.jpeg" alt="Miss. Aaruni Singh" class="team-modern-photo">
+                                    <div class="team-modern-name">Miss. Aaruni Singh</div>
+                                    <span class="badge bg-success mb-2" style="font-size:0.92rem;padding:0.36em 0.9em 0.36em 0.9em;font-weight:600;letter-spacing:0.01em;">Executive Member/<br>Head</span>
                                 </div>
                             </div>
                         </div>
@@ -1141,22 +1169,22 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
 .support-modern-card {
     background: rgba(255,255,255,0.92);
     border-radius: 26px;
-    box-shadow: 0 3px 28px 0 rgba(44,204,64,0.14), 0 2px 10px rgba(39,174,96,0.09);
+    box-shadow: 0 3px 28px 0 rgba(44, 92, 204, 0.14), 0 2px 10px rgba(39, 131, 174, 0.09);
     padding: 2.6rem 2.1rem 2.1rem 2.1rem;
     max-width: 740px;
     margin: 0 auto;
-    border: 1.5px solid #d6f4e4;
+    border: 1.5px solid #d6e7f4;
 }
 .support-title-modern {
     font-size: 2.15rem;
     font-weight: 900;
-    color: #15925a;
+    color: #2f2f2f;
     letter-spacing: .5px;
     margin-bottom: 1.25rem;
     text-shadow: 0 .5px 0 #e9f5ec;
 }
 .support-lead-modern {
-    color: #2c6256;
+    color: #2c4862;
     font-size: 1.15rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -1166,7 +1194,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
     margin:0 0 1.8rem 0;
     padding:0;
     font-size: 1.18rem;
-    color: #177248;
+    color: #2d548e;
     font-weight: 500;
     line-height: 1.7;
 }
@@ -1179,11 +1207,11 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
 }
 .support-list-icon {
     width:2.1em; height:2.1em;
-    display:inline-flex;align-items:center;justify-content:center;background:#e7fbea;border-radius:50%;color:#179e6b;font-size:1.19em;box-shadow: 0 1.5px 8px #b1e6ce26;margin-right:.27em;
+    display:inline-flex;align-items:center;justify-content:center;background:#e7f5fb;border-radius:50%;color:#4e7afe;font-size:1.19em;box-shadow: 0 1.5px 8px #b1d8e626;margin-right:.27em;
 }
 .support-final-modern {
     background:rgba(255,255,255,0.79);
-    color:#178d55;
+    color:#2c4262;
     font-size:1.08rem;
     font-weight:700;
     border-radius:10px;
@@ -1191,7 +1219,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
     text-align:center;
     max-width: 520px;
     margin:2.1rem auto 0 auto;
-    box-shadow:0 1px 6px #b1e6ce15;
+    box-shadow:0 1px 6px #b1d7e615;
 }
 @media (max-width:650px) {
     .support-modern-card{padding:1.1rem .5rem 1.2rem .5rem;}
@@ -1207,12 +1235,12 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
             .team-title-modern {
                 font-size: 2.3rem;
                 font-weight: 900;
-                color: #179b6b;
+                color: #17629b;
                 letter-spacing: .5px;
                 margin-bottom: 1.09rem;
             }
             .team-desc-modern {
-                color: #22604b;
+                color: #224460;
                 font-size: 1.13rem;
                 max-width: 670px;
                 margin-left: auto;
@@ -1227,10 +1255,10 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 margin-right: 0;
             }
             .team-modern-avatar-card {
-                background: rgba(255,255,255,0.92);
-                backdrop-filter: blur(7px);
+                background: #f8f9fd;
                 border-radius: 18px;
-                box-shadow: 0 4px 20px rgba(44,204,64,.09), 0 1px 8px rgba(81,152,104,0.09);
+                border: 1.5px solid #d6e7f4;
+                box-shadow: 0 2px 12px rgba(39,174,96,0.10);
                 padding: 1.55rem 1rem .86rem 1rem;
                 display: flex;
                 flex-direction: column;
@@ -1240,7 +1268,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 max-width: 215px;
             }
             .team-modern-avatar-card:hover {
-                box-shadow: 0 8px 38px rgba(39,174,96,0.14), 0 2.5px 12px rgba(38,101,78,0.10);
+                box-shadow: 0 8px 38px rgba(39,174,96,0.17), 0 2.5px 12px rgba(38,101,78,0.14);
                 transform: translateY(-4px) scale(1.055);
             }
             .team-modern-photo {
@@ -1248,21 +1276,21 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 height: 140px;
                 object-fit: cover;
                 border-radius: 36px;
-                border: 3px solid #27ae60;
+                border: 3px solid #2c5aa0;
                 margin-bottom: 1.1rem;
-                background: #eaf8f0;
-                box-shadow: 0 2.5px 12px rgba(64,191,116,0.07);
+                background: #eaf2f8;
+                box-shadow: 0 2.5px 12px rgba(64,191,116,0.10);
                 transition: box-shadow 0.2s;
             }
             .team-modern-name {
                 font-weight: 700;
                 font-size: 1.11rem;
-                color: #168a65;
+                color: #2c5aa0;
                 margin-bottom: .22rem;
             }
             .team-modern-role {
                 font-size: 0.99rem;
-                color: #517c68;
+                color: #51607c;
                 font-weight: 500;
                 letter-spacing: 0.02em;
             }
@@ -1278,40 +1306,40 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
 
     
     <!-- Your Contribution Section -->
-    <section class="contribution-section" id="contribute" style="background: linear-gradient(120deg, #145a32 60%, #222 100%); color: #fff; position: relative;">
+    <section class="contribution-section" id="contribute" style="background: #faf9ff; color: #003194; position: relative;">
         <div class="container">
-            <h2 class="text-center section-title" style="color:#27ae60;">Your Contribution</h2>
+            <h2 class="text-center section-title" style="color:#1e1f1f;">Your Contribution</h2>
             <p class="desc text-center mb-4" style="font-size:1.2rem;max-width:700px;margin:auto;">
                 Your support powers our mission. Every donation helps us plant more trees, educate more communities, and protect more wildlife.<br>
-                <span style="color:#e0ffe0;font-weight:600;">Choose your way to contribute and make a difference today!</span>
+                <span style="color:#1e1f1f;font-weight:600;">Choose your way to contribute and make a difference today!</span>
             </p>
             <div class="row justify-content-center mb-4">
                 <div class="col-md-4 mb-3 mb-md-0">
-                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-leaf"></i></div>
+                    <div style="background:#f8f9fd;border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;margin-bottom:1rem;">
+                        <div style="font-size:2rem;color:#2c5aa0;"><i class="fa fa-leaf"></i></div>
                         <div style="font-weight:700;font-size:1.1rem;">Every ₹500</div>
-                        <div style="font-size:0.98rem;">Plants a tree</div>
+                        <div style="font-size:0.98rem; color:#224460;">Plants a tree</div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3 mb-md-0">
-                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-certificate"></i></div>
+                    <div style="background:#f8f9fd;border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;margin-bottom:1rem;">
+                        <div style="font-size:2rem;color:#2c5aa0;"><i class="fa fa-certificate"></i></div>
                         <div style="font-weight:700;font-size:1.1rem;">Tax Benefits</div>
-                        <div style="font-size:0.98rem;">80G Exemption</div>
+                        <div style="font-size:0.98rem; color:#224460;">80G Exemption</div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-hands-helping"></i></div>
+                    <div style="background:#f8f9fd;border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;margin-bottom:1rem;">
+                        <div style="font-size:2rem;color:#2c5aa0;"><i class="fa fa-hands-helping"></i></div>
                         <div style="font-weight:700;font-size:1.1rem;">Transparent Impact</div>
-                        <div style="font-size:0.98rem;">90% funds to projects</div>
+                        <div style="font-size:0.98rem; color:#224460;">90% funds to projects</div>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center align-items-stretch mb-5">
                 <div class="col-lg-7 mb-4 mb-lg-0">
                     <div style="background:rgba(255,255,255,0.13);border-radius:18px;padding:2.5rem 2rem 2rem 2rem;box-shadow:0 4px 24px rgba(39,174,96,0.13);height:100%;display:flex;flex-direction:column;justify-content:center;">
-                        <h5 class="mb-3" style="color:#27ae60;font-weight:700;"><i class="fa fa-university me-2"></i>Bank Transfer</h5>
+                        <h5 class="mb-3" style="color:#1e1f1f;font-weight:700;"><i class="fa fa-university me-2"></i>Bank Transfer</h5>
                         <div class="row">
                             <div class="col-md-6">
                                 <p><strong>Account Name:</strong> HEALPING NS FOUNDATION</p>
@@ -1328,7 +1356,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 </div>
                 <div class="col-lg-5 d-flex flex-column align-items-center justify-content-center">
                     <div style="background:#fff;padding:1.5rem;border-radius:18px;box-shadow:0 2px 12px rgba(39,174,96,0.10);margin-bottom:1.2rem;display:flex;flex-direction:column;align-items:center;">
-                        <div style="font-size:1.5rem;color:#27ae60;font-weight:700;margin-bottom:0.5rem;"><i class="fa fa-qrcode me-2"></i>UPI / QR</div>
+                        <div style="font-size:1.5rem;color:#1e1f1f;font-weight:700;margin-bottom:0.5rem;"><i class="fa fa-qrcode me-2"></i>UPI / QR</div>
                         <div class="barcode mb-2" style="background:#fff;box-shadow:none;padding:0;">
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=greenearth@upi&pn=GreenEarthNGO" alt="QR Code for Payment">
                         </div>
@@ -1338,34 +1366,34 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
             </div>
             <div class="row mb-4">
                 <div class="col-12">
-                    <h4 class="text-center mb-4" style="color:#27ae60;font-weight:700;">How Your Donation Helps</h4>
+                    <h4 class="text-center mb-4" style="color:#1e1f1f;font-weight:700;">How Your Donation Helps</h4>
                 </div>
                 <div class="col-md-3 col-6 mb-4">
-                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-book-open"></i></div>
-                        <div style="font-weight:600;margin-top:0.7rem;">Educate Marginalized Children</div>
-                        <div style="font-size:0.98rem;color:#e0ffe0;">Your gift sends underprivileged kids to school, covers fees and study materials.</div>
+                    <div style="background:#f8f9fd;border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;">
+                        <div style="font-size:2rem;color:#2c5aa0;"><i class="fa fa-book-open"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem; color:#1e1f1f;">Educate Marginalized Children</div>
+                        <div style="font-size:0.98rem;color:#224460;">Your gift sends underprivileged kids to school, covers fees and study materials.</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 mb-4">
-                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-female"></i></div>
-                        <div style="font-weight:600;margin-top:0.7rem;">Empower Women & Youth</div>
-                        <div style="font-size:0.98rem;color:#e0ffe0;">Vocational, legal aid, and skill-building for sustainable futures.</div>
+                    <div style="background:#f8f9fd;border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;">
+                        <div style="font-size:2rem;color:#2c5aa0;"><i class="fa fa-female"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem; color:#1e1f1f;">Empower Women & Youth</div>
+                        <div style="font-size:0.98rem;color:#224460;">Vocational, legal aid, and skill-building for sustainable futures.</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 mb-4">
-                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-child"></i></div>
-                        <div style="font-weight:600;margin-top:0.7rem;">Protect Vulnerable Children</div>
-                        <div style="font-size:0.98rem;color:#e0ffe0;">Funds rescue, shelter, and ongoing support for at-risk children.</div>
+                    <div style="background:#f8f9fd;border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;">
+                        <div style="font-size:2rem;color:#2c5aa0;"><i class="fa fa-child"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem; color:#1e1f1f;">Protect Vulnerable Children</div>
+                        <div style="font-size:0.98rem;color:#224460;">Funds rescue, shelter, and ongoing support for at-risk children.</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 mb-4">
-                    <div style="background:rgba(255,255,255,0.10);border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);">
-                        <div style="font-size:2rem;color:#27ae60;"><i class="fa fa-medkit"></i></div>
-                        <div style="font-weight:600;margin-top:0.7rem;">Health & Hygiene Drives</div>
-                        <div style="font-size:0.98rem;color:#e0ffe0;">Supports camps, menstrual hygiene and emergency medical relief.</div>
+                    <div style="background:#f8f9fd;border-radius:14px;padding:1.2rem;text-align:center;box-shadow:0 2px 12px rgba(39,174,96,0.10);border:1.5px solid #d6e7f4;">
+                        <div style="font-size:2rem;color:#2c5aa0;"><i class="fa fa-medkit"></i></div>
+                        <div style="font-weight:600;margin-top:0.7rem; color:#1e1f1f;">Health & Hygiene Drives</div>
+                        <div style="font-size:0.98rem;color:#224460;">Supports camps, menstrual hygiene and emergency medical relief.</div>
                     </div>
                 </div>
             </div>
@@ -1373,9 +1401,9 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact" style="background: linear-gradient(120deg, #e9f5ec 60%, #fff 100%); padding: 7rem 0 4rem 0;">
+    <section class="contact-section" id="contact" style="background: #f8f9fd; padding: 7rem 0 4rem 0;">
         <div class="container">
-            <h2 class="section-title text-center" style="color: var(--primary-green); font-weight: 700;">Contact Us</h2>
+            <h2 class="section-title text-center" style="color: #000088; font-weight: 700;">Contact Us</h2>
             <p class="text-center mb-5" style="font-size: 1.2rem; color: #333;">We'd love to hear from you! Reach out for collaborations, volunteering, or any questions.</p>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -1402,15 +1430,15 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                         </form>
                         <div class="row mt-5 text-center text-md-start">
                             <div class="col-md-4 mb-3 mb-md-0">
-                                <div style="font-size: 1.2rem; color: var(--primary-green);"><i class="fa fa-envelope me-2"></i><strong>Email</strong></div>
+                                <div style="font-size: 1.2rem; color: #002c93;"><i class="fa fa-envelope me-2"></i><strong>Email</strong></div>
                                 <div style="color: #333;">ssindiafoundation1008@gmail.com</div>
                             </div>
                             <div class="col-md-4 mb-3 mb-md-0">
-                                <div style="font-size: 1.2rem; color: var(--primary-green);"><i class="fa fa-phone me-2"></i><strong>Phone</strong></div>
+                                <div style="font-size: 1.2rem; color: #002c93;"><i class="fa fa-phone me-2"></i><strong>Phone</strong></div>
                                 <div style="color: #333;">+91 8001031008</div>
                             </div>
                             <div class="col-md-4">
-                                <div style="font-size: 1.2rem; color: var(--primary-green);"><i class="fa fa-map-marker-alt me-2"></i><strong>Address</strong></div>
+                                <div style="font-size: 1.2rem; color: #002c93;"><i class="fa fa-map-marker-alt me-2"></i><strong>Address</strong></div>
                                 <div style="color: #333;">HEALPING NS FOUNDATION, Lalpur , Ranchi , Jharkhand , India 834001</div>
                             </div>
                         </div>
@@ -1420,7 +1448,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                             <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         </div>
-                        <div class="map-embed mt-4" style="border: 3px solid var(--primary-green); border-radius: 16px; overflow: hidden;">
+                        <div class="map-embed mt-4" style="border: 3px solid #252528; border-radius: 16px; overflow: hidden;">
                             <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=77.5946%2C12.9716%2C77.5946%2C12.9716&amp;layer=mapnik" style="width:100%;height:220px;border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
@@ -1430,12 +1458,12 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
     </section>
 
     <!-- Footer Modern -->
-    <footer class="footer mt-5" style="background: #181818; color: #f8f9fa; border-top: 4px solid #27ae60; padding: 3.5rem 0 2rem 0;">
+    <footer class="footer mt-5" style="background: #181818; color: #f8f9fa; border-top: 4px solid #f8f9fd; padding: 3.5rem 0 2rem 0;">
         <div class="container">
             <div class="row align-items-center mb-4">
                 <div class="col-md-6 mb-3 mb-md-0">
-                    <h5 style="font-weight: 700; color: #27ae60; letter-spacing: 1px;">HEALPING NS FOUNDATION</h5>
-                    <p style="color: #e0ffe0;">© 2024 HEALPING NS FOUNDATION. All rights reserved.</p>
+                    <h5 style="font-weight: 700; color: #d3caf9; letter-spacing: 1px;">HEALPING NS FOUNDATION</h5>
+                    <p style="color: #d3caf9;">© 2024 HEALPING NS FOUNDATION. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="#hero" style="margin-right: 1.2rem;">Home</a>
@@ -1449,7 +1477,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                 <div class="col-md-7 mb-3 mb-md-0">
                     <form class="newsletter-form p-2 px-md-3" style="background: rgba(255,255,255,0.08); border-radius: 14px; box-shadow: 0 2px 12px rgba(20,90,50,0.10); display: flex; gap: 0.5rem; max-width: 420px;">
                         <input type="email" placeholder="Subscribe to our newsletter" required style="border-radius: 8px; border: none; padding: 0.5rem 1rem; flex: 1; background: rgba(255,255,255,0.15); color: #222;">
-                        <button type="submit" style="border-radius: 8px; border: none; background: #27ae60; color: #fff; font-weight: 600; padding: 0.5rem 1.2rem; transition: background 0.2s;">Subscribe</button>
+                        <button type="submit" style="border-radius: 8px; border: none; background: #d7d0fe; color: #26252c; font-weight: 600; padding: 0.5rem 1.2rem; transition: background 0.2s;">Subscribe</button>
                     </form>
                 </div>
                 <div class="col-md-5 text-md-end mt-3 mt-md-0">
@@ -1503,7 +1531,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                         transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                     }
                     .footer .icon svg {
-                        color: #27ae60;
+                        color: #252528;
                         transition: color 0.2s;
                     }
                     .footer .tooltip {
@@ -1549,7 +1577,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                     .footer .instagram:hover,
                     .footer .instagram:hover .tooltip,
                     .footer .instagram:hover .tooltip::before {
-                        background: #27ae60;
+                        background: #252528;
                         color: #fff;
                     }
                     .footer .icon:hover svg {
@@ -1622,7 +1650,7 @@ box-shadow: 0 4px 18px 0 #b1e6ce2a;
                         r: 40+Math.random()*40,
                         dx: -0.2+Math.random()*0.4,
                         dy: -0.2+Math.random()*0.4,
-                        color: i%2===0 ? '#27ae60' : '#e9f5ec',
+                        color: i%2===0 ? '#1e1f1f' : '#e9f5ec',
                         a: 0.08+Math.random()*0.08
                     });
                 }
